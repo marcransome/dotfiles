@@ -1,3 +1,3 @@
 function lt
-	 ls -alt $argv
+	 ls -alGpt $argv
 end
