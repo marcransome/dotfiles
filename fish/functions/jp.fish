@@ -1,7 +1,7 @@
 function jp -d "Open default editor with date prepended filename and specified title for jekyll posts."
 
   set title (date +"%Y-%m-%d")
-  set front_matter "---\nlayout:\ntitle:\nimage:\n---\n"
+  set front_matter "---\nlayout: post\ntitle:\nimage:\n---\n"
 
   switch (count $argv) 
     case 0
