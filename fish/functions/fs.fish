@@ -1,3 +1,3 @@
-function fs
-	 du -h -d1 $argv
+function fs --description "Show file sizes for specified directory."
+    du -h -d0 $argv
 end
