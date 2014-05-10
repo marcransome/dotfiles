@@ -1,3 +1,3 @@
 function EDITOR
-        vim $argv
+    vim $argv
 end
