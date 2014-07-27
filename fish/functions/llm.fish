@@ -1,6 +1,5 @@
 function llm
-    set os (uname)
-    switch $os
+    switch (uname)
         case Darwin
             ls	-alpG $argv | more
         case Linux
