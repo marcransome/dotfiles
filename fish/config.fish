@@ -1,6 +1,3 @@
-# silence greeting message
-set fish_greeting
-
 # set path ordering to favour homebrew 
 set -x PATH /usr/local/bin /usr/local/sbin ~/bin /usr/local/opt/ruby/bin $PATH
 
