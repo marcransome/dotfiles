@@ -1,6 +1,5 @@
 function l
-    set os (uname)
-    switch $os
+    switch (uname)
         case Darwin
             ls -apG $argv
         case Linux

@@ -1,6 +1,5 @@
 function lt
-    set os (uname)
-    switch $os
+    switch (uname)
         case Darwin
             ls -alptG $argv
         case Linux
