@@ -1,6 +1,6 @@
 function fish_prompt
     set last_status $status
-    printf '%s@%s in ' (whoami) (hostname -s)
+    printf '%s@%s ' (whoami) (hostname -s)
     set_color $fish_color_cwd
     printf '%s' (prompt_pwd)
     set_color normal
