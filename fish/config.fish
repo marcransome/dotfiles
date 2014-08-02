@@ -1,8 +1,17 @@
-# set path ordering to favour homebrew 
-set -x PATH /usr/local/bin /usr/local/sbin ~/bin /usr/local/opt/ruby/bin $PATH
+# path variable
+switch (uname)
+    case Darwin
+        set -x PATH /usr/local/bin /usr/local/sbin ~/bin $PATH
+    case Linux
+        set -x PATH /usr/local/bin /usr/local/sbin ~/bin (ruby -rubygems -e "puts Gem.user_dir")/bin $PATH
+end
 
-# show current git branch in prompt
+# git prompt defaults
+set __fish_git_prompt_show_informative_status 'yes'
 set __fish_git_prompt_color_branch yellow
+set __fish_git_prompt_char_stagedstate '∙'
+set __fish_git_prompt_char_untrackedfiles '⋯'
+set __fish_git_prompt_char_dirtystate '+'
 
-# configure some convenient aliases
+# convenience aliases
 alias grep="grep --color=always"
