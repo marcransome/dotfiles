@@ -1,49 +1,53 @@
-" general
-set shell=/bin/bash " for vundle to work with fish
-set nocompatible    " don't use vi compatibility
-set encoding=utf-8
-set number          " display line numbers
-set backspace=2     " allow backspacing in insert mode
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'bling/vim-airline'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'jiangmiao/auto-pairs'
+call vundle#end()  
+filetype plugin indent on
 
-" whitespace/indentation
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+" Vim-airline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+set timeoutlen=20
+
+" NERDTree settings
+let NERDTreeShowHidden=1
+
+" Whitespace
 set expandtab
+set tabstop=4
+set shiftwidth=4
+set smartindent
 
-" searching
-set hlsearch
-set incsearch
+" General settings
+set laststatus=2
+set relativenumber
+set noshowmode
 
-" visual
-set laststatus=2    " always display the statusline in all windows
-set noshowmode      " hide the default mode text below statusline 
-syntax on           " enable syntax highlighting
-colorscheme distinguished
+" Functions
+function! ToggleLineNumberType()
+    if &number
+        set nonumber
+        set relativenumber
+    else
+        set norelativenumber
+        set number
+    endif
+endfunction
 
-filetype off        " required for vundle
+" Key mappings
+nnoremap <silent> <C-i> :call ToggleLineNumberType()<CR>
+nnoremap <silent> <C-l> :bnext!<CR>
+nnoremap <silent> <C-h> :bprevious!<CR>
+nnoremap <silent> <C-n> :enew<CR>
+nnoremap <silent> <C-k> :bd<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 
-" reduce terminal timeout when leaving insert
-" mode for faster updates to statusline
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
+" fix for vundle issues with fish (non-POSIX compliant)
+set shell=/bin/bash"
 
-" vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
-" plugins
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline'
-"Bundle 'Yggdroot/indentLine'
-
-filetype plugin indent on   " required for vundle
