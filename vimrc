@@ -28,6 +28,7 @@ set smartindent
 set laststatus=2
 set relativenumber
 set noshowmode
+set backspace=2
 
 " Functions
 function! ToggleLineNumberType()
