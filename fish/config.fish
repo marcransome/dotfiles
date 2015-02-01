@@ -7,6 +7,9 @@ switch (uname)
         set -x PATH /usr/local/bin /usr/local/sbin ~/bin (ruby -rubygems -e "puts Gem.user_dir")/bin $PATH
 end
 
+# default editor
+set -x EDITOR vim
+
 # git prompt defaults
 set __fish_git_prompt_show_informative_status 'yes'
 set __fish_git_prompt_color_branch yellow
