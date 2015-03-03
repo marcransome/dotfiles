@@ -1,6 +1,8 @@
 " Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugins
 call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
     Plugin 'bling/vim-airline'
@@ -49,6 +51,6 @@ nnoremap <silent> <C-n> :enew<CR>
 nnoremap <silent> <C-k> :bd<CR>
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 
-" fix for vundle issues with fish (non-POSIX compliant)
-set shell=/bin/bash"
+" fix for vundle issues with fish (non-POSIX compliance)
+set shell=/bin/bash
 
