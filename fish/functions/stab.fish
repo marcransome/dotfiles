@@ -1,5 +1,5 @@
 function stab -d "Set the current iTerm tab colour"
-    switch $argv[1]
+    switch (echo $argv[1])
         case green
             set rgb_values 168 203 79
         case orange
