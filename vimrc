@@ -31,6 +31,7 @@ set laststatus=2
 set relativenumber
 set noshowmode
 set backspace=2
+syntax on
 
 " Functions
 function! ToggleLineNumberType()
