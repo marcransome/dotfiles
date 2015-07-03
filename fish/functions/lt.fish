@@ -1,8 +1,8 @@
 function lt
     switch (uname)
         case Darwin
-            ls -alptG $argv
+            ls -alFtG $argv
         case Linux
-            ls -alpt --color $argv
+            ls -alFt --color $argv
     end
 end

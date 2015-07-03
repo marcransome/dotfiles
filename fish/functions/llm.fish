@@ -1,8 +1,8 @@
 function llm
     switch (uname)
         case Darwin
-            ls	-alpG $argv | more
+            ls -alFG $argv | more
         case Linux
-            ls	-alp --color=auto $argv | more
+            ls -alF --color=auto $argv | more
     end
 end

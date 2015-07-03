@@ -1,8 +1,8 @@
 function ll
     switch (uname)
         case Darwin
-            ls -alpG $argv
+            ls -alFG $argv
         case Linux
-            ls -alp --color=auto $argv
+            ls -alF --color=auto $argv
     end
 end

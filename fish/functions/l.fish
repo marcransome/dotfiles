@@ -1,8 +1,8 @@
 function l
     switch (uname)
         case Darwin
-            ls -apG $argv
+            ls -aFG $argv
         case Linux
-            ls -ap --color=auto $argv
+            ls -aF --color=auto $argv
     end
 end
