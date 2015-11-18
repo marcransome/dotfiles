@@ -1,5 +1,5 @@
 function ssh
-    /usr/bin/ssh $argv
+    command ssh $argv
     
     if test (uname) = Darwin
         rtab
