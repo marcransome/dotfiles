@@ -1,10 +1,17 @@
-# path variable
+# global exports
+set -x GEM_HOME $HOME/.gem
+
+# system-specific exports
 switch (uname)
     case Darwin
-        set -x PATH /usr/local/bin /usr/local/sbin ~/bin $PATH
-    case Linux
-        set -x LANG en_GB.utf8
         set -x PATH /usr/local/bin /usr/local/sbin ~/bin (ruby -rubygems -e "puts Gem.user_dir")/bin $PATH
+    case Linux      
+        set -x PATH /usr/local/bin /usr/local/sbin ~/bin (ruby -rubygems -e "puts Gem.user_dir")/bin $PATH
+end
+
+# private variable exports
+for file in (ls $HOME/.config/fish/private/*.fish)
+    source $file
 end
 
 # default editor
