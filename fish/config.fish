@@ -17,5 +17,3 @@ set __fish_git_prompt_char_stagedstate '∙'
 set __fish_git_prompt_char_untrackedfiles '⋯'
 set __fish_git_prompt_char_dirtystate '+'
 
-# convenience aliases
-alias grep="grep --color=always"
