@@ -1,5 +1,6 @@
 # global exports
 set -x GEM_HOME $HOME/.gem
+set -x LANG en_GB.UTF-8
 
 # system-specific exports
 switch (uname)
